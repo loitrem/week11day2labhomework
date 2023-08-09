@@ -1,10 +1,9 @@
 //require express
 const express = require('express');
 
-
 //connects express instance to variable app
 const app = express();
-let firstName;
+
 //sets engine
 app.set('view engine', 'jsx');
 
@@ -41,18 +40,6 @@ app.get('/magic',(req,res)=>{
 app.get('/magic/:question',(req,res)=>{
     res.render("Magic",{question:req.params.question});
 })
-
-
-// app.get('/fruits', (req,res)=>{
-//     res.send(fruits)
-// })
-
-
-// app.get('/fruits/:indexOfFruitsArray',(req,res)=>{
-//     res.render('Show', {
-//         fruit: fruits[req.params.indexOfFruitsArray]
-//     })
-// })
 
 //sets server and displays message if working
 app.listen(PORT,(req, res)=>{
